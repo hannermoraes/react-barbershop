@@ -5,4 +5,5 @@
   "[prisma]": { 
   "editor.formatOnSave": true
 },
+"todo-tree.tree.showBadges": false,
 }

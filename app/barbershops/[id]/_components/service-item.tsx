@@ -84,12 +84,12 @@ const ServiceItem = ({ service, barbershop, isAuthenticated }: ServiceItemProps)
       setHour(undefined);
       setDate(undefined);
 
-      toast("Reserva realizada com sucesso", {
-        description: format(newDate, "'para' dd 'de' MMMM 'às' HH':'mm'.'", {
+      toast("Reserva realizada com sucesso!", {
+        description: format(newDate, "'Agendado para:'dd 'de' MMMM 'às' HH':'mm'.'", {
           locale: ptBR,
         }),
         action: {
-          label: "Visualizar",
+          label: "Visualizar Reserva",
           onClick: () => router.push("/bookings"),
         }
       })
@@ -252,8 +252,8 @@ const ServiceItem = ({ service, barbershop, isAuthenticated }: ServiceItemProps)
                     </Card>
                   </div>
 
-                  <SheetFooter className="px-5">
-                    <Button onClick={handleBookingSubmit} disabled={!hour || !date || submitIsLoading}>
+                  <SheetFooter className="flex px-3 m-2">
+                    <Button className="w-full" onClick={handleBookingSubmit} disabled={!hour || !date || submitIsLoading}>
                       {submitIsLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
                       Confirmar reserva
                     </Button>
