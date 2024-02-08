@@ -18,7 +18,7 @@ const BookingItem = ({ booking }: BookingItemProps) => {
   const isBookingConfirmed = isFuture(booking.date);
 
   return (
-    <Card>
+    <Card className="min-w-full">
       <CardContent className="flex py-0 px-0">
         <div className="flex flex-col flex-[3] gap-2 py-5 px-5">
           <Badge variant={isBookingConfirmed ? "default" : "secondary"} className="w-fit">
